@@ -1,0 +1,24 @@
+#Notes to create custom pi
+
+docker pull lukechilds/dockerpi
+
+#Create DockerFile in working dir
+touch Dockerfile
+
+#Dockerfile contents, copy home directory into docker container:
+```
+FROM lukechilds/dockerpi
+COPY ./* /home/fota-admin
+
+#docker image build -t <image> .
+docker image build -t mypi .
+
+
+#Upload to ECR
+#aws ecr create-repository --repository-name <name> --region <region>
+
+#aws ecr get-login-password --region <region> | docker login --username <AWS> --password-stdin <aws_account_id.dkr.ecr.region.amazonaws.com>
+
+#docker tag <e9ae3c220b23 aws_account_id.dkr.ecr.region.amazonaws.com/my-repository:tag>
+
+#docker push aws_account_id.dkr.ecr.region.amazonaws.com/my-repository:tag
