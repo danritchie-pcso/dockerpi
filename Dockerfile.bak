@@ -1,0 +1,7 @@
+FROM alpine
+#Create fota-admin user and password
+RUN adduser -D -g fota-admin fota-admin && echo 'fota-admin:fota123' | chpasswd
+#Copy existing gateway folders into docker container
+COPY home.tar /home/fota-admin/home.tar
+RUN tar xf /home/fota-admin/home.tar && rm /home/fota-admin/home.tar
+USER fota-admin
