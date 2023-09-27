@@ -1,5 +1,7 @@
 # AWS CLI Reference for ECR
+```
 https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ecr/index.html
+```
 # Created a repository
 ```
 aws ecr create-repository --repository-name fota-registry --region ap-southeast-1 --profile devdan
