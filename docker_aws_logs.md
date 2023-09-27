@@ -1,3 +1,5 @@
+# AWS CLI Reference for ECR
+https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ecr/index.html
 # Created a repository
 ```
 aws ecr create-repository --repository-name fota-registry --region ap-southeast-1 --profile devdan
@@ -29,7 +31,7 @@ Login Succeeded
 ```
 # Tagging Docker Image
 ```
-docker tag mypi:latest 600582092527.dkr.ecr.ap-southeast-1.amazonaws.com/fota-registry:mypiz
+docker tag mypi:latest 600582092527.dkr.ecr.ap-southeast-1.amazonaws.com/fota-registry:mypi
 ```
 # Pushing my docker image
 ```
